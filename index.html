@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conversion de date Hijri</title>
+    <script src="https://cdn.jsdelivr.net/npm/hijri-date@1.0.5/dist/hijri-date.min.js"></script>
+  </head>
+  <body>
+    <p id="hijri-date"></p>
+    <script>
+      var date = new Date();
+      var hijriDate = new HijriDate(date);
+      var weekdays = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+      var months = ["Mouharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Joumada al-oula", "Joumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Chawwal", "Dhoul-Qi'dah", "Dhoul-Hijjah"];
+      var weekday = weekdays[hijriDate.getDay()];
+      var day = hijriDate.getDate();
+      var month = months[hijriDate.getMonth()];
+      var year = hijriDate.getFullYear();
+      var hijriDateString = weekday + " le " + day + " " + month + " " + year;
+      document.getElementById("hijri-date").innerHTML = hijriDateString;
+    </script>
+  </body>
+</html>
